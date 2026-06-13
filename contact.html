@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>상은 | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="t.css">
+</head>
+<body>
+<header>
+  <h1>상은</h1>
+  <p class="subtitle">배움과 성장을 기록하는 공간입니다.</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<main class="container">
+<section>
+  <h2>Contact</h2>
+  <ul class="contact-info">
+    <li><strong>이메일:</strong> pse021111@kw.ac.kr</li>
+    <li><strong>GitHub:</strong>https://sang-eun331.github.io/myhomepage/</li>
+  </ul>
+
+  <form class="contact-form" onsubmit="return false;">
+    <div class="form-group">
+      <label>성함</label>
+      <input type="text" placeholder="이름을 입력하세요">
+    </div>
+    
+    <div class="form-group">
+      <label>메시지</label>
+      <textarea rows="8" placeholder="전하고 싶은 메시지를 적어주세요..." class="letter-style"></textarea>
+    </div>
+    
+    <button type="submit">메시지 보내기</button>
+  </form>
+</section>
+</main>
+<footer>
+  <small>&copy; <span id="year"></span> 상은. All rights reserved.</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+

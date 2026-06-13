@@ -1,0 +1,175 @@
+/* 기본 설정 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.6;
+  color: #2C3E50; /* 짙은 네이비 그레이로 가독성 향상 */
+  background-color: #fcfcfc;
+}
+
+/* 헤더: 차분하고 맑은 하늘색 */
+header {
+  background-color: #3498DB; /* 신뢰감을 주는 Sky Blue */
+  color: white;
+  padding: 3.5rem 1rem;
+  text-align: center;
+  border-bottom: 3px solid #2980B9; /* 하단에 짙은 라인을 주어 경계 명확화 */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: -1.5px; /* 더 날카로운 느낌을 위해 자간 조정 */
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+  margin-top: 0.8rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* 메뉴바: 살짝 푸른끼가 도는 흰색 */
+nav {
+  background: #F0F4F8; /* Alice Blue 계열의 차가운 흰색 */
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  border-bottom: 1px solid #D1D9E0; /* 얇고 날카로운 구분선 */
+}
+
+nav a {
+  color: #34495E; /* 어두운 청회색 */
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: #3498DB; /* 호버 시 헤더 색상과 통일 */
+  transform: translateY(-1px);
+}
+
+/* 메인 컨텐츠 */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 25px;
+}
+
+h2 {
+  border-left: 6px solid #3498DB; /* 주황색 대신 하늘색 포인트 */
+  padding-left: 15px;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  color: #2C3E50;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  margin-bottom: 12px;
+  padding: 18px;
+  border: 1px solid #E1E8ED; /* 연한 블루그레이 테두리 */
+  border-radius: 2px; /* 아주 약간만 깎아서 단정한 느낌 유지 */
+}
+
+/* 푸터 */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 0.85rem;
+  color: #95A5A6;
+}
+
+nav a {
+  display: inline-block; /* 크기 변화를 자연스럽게 만들기 위해 필요 */
+  transition: transform 0.2s ease; /* 애니메이션 속도 제어 */
+}
+
+/* 기존 공통 스타일 유지... (header, nav 등) */
+
+/* Contact 전용 스타일 */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 20px; /* 전체 폼을 둥글게 */
+  border: 1px solid #D1D9E0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* 위아래 배치 */
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #34495E;
+  font-size: 0.9rem;
+}
+
+/* 입력창 공통 스타일 */
+input[type="text"], .letter-style {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #F0F4F8; /* 메뉴바와 비슷한 연한 푸른색 */
+  background-color: #F0F4F8; /* 배경색도 메뉴바와 통일 */
+  border-radius: 12px; /* 입력창도 둥글게 */
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus, .letter-style:focus {
+  border: 2px solid #3498DB; /* 포커스 시 하늘색 포인트 */
+}
+
+/* 편지지 모양 메시지 창 */
+.letter-style {
+  line-height: 2; /* 줄 간격을 넓게 */
+  background-image: linear-gradient(#D1D9E0 1px, transparent 1px); /* 가로선 효과 */
+  background-size: 100% 2em; /* 줄 간격에 맞춰 선 배치 */
+  resize: none; /* 크기 조절 비활성화로 모양 유지 */
+}
+
+/* 전송 버튼 */
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #3498DB;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980B9;
+}
+
+nav a:hover {
+  transform: scale(1.15); /* 마우스 올렸을 때 1.15배 커짐 */
+  color: #3498DB; /* 글자색도 함께 변하면 더 명확합니다 */
+}

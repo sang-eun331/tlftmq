@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 스타일 변환기</title>
+    <style>
+        body {
+            font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #fafafa;
+        }
+
+        #target {
+            font-size: 20px;
+            font-weight: 600;
+            padding: 30px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            margin: 30px auto;
+            width: 80%;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 15px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        button:hover {
+            background-color: #f8f8f8;
+            border-color: #333;
+            color: #000;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>DOM 스타일 변환기</h2>
+    <p id="target">이 문장의 스타일을 바꿔보세요!</p>
+
+    <button onclick="changeColor()">글자색 변경</button>
+    <button onclick="changeSize()">크게 보기</button>
+    <button onclick="toggleVisibility()">숨기기/보이기</button>
+    <button onclick="resetStyle()">초기화</button>
+
+    <script>
+        function getTarget() {
+            return document.getElementById("target");
+        }
+        function changeColor() {
+            getTarget().style.color = "#4a90e2";
+        }
+        function changeSize() {
+            var obj = getTarget();
+            obj.style.fontSize = "32px";
+            obj.style.borderColor = "#4a90e2";
+        }
+        function toggleVisibility() {
+            var obj = getTarget();
+            if (obj.style.display === "none") {
+                obj.style.display = "block";
+            } else {
+                obj.style.display = "none";
+            }
+        }
+        function resetStyle() {
+            var obj = getTarget();
+            obj.style.color = "#333";
+            obj.style.fontSize = "20px";
+            obj.style.borderColor = "#e0e0e0";
+            obj.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

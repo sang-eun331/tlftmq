@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사파이어 바다 D-Day 계산기</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background: linear-gradient(135deg, #132237, #1e3d59, #175873);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 45px 30px;
+            text-align: center;
+            box-shadow: 0 12px 40px 0 rgba(8, 21, 37, 0.4);
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            margin: 15px 0;
+            color: #ffffff;
+            text-shadow: 0 4px 12px rgba(19, 34, 55, 0.3);
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: #bfe3ed;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        p {
+            color: rgba(235, 245, 250, 0.7);
+            font-size: 0.95rem;
+            margin: 8px 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            margin: 25px 0;
+        }
+
+        footer {
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <script>
+                let now = new Date();
+
+                let yearStr = prompt("목표 연도를 입력하세요 (예: 2026)", "2026");
+                let monthStr = prompt("목표 월을 입력하세요 (1~12)", "12");
+                let dayStr = prompt("목표 일을 입력하세요 (1~31)", "25");
+
+                if (!yearStr || !monthStr || !dayStr) {
+                    document.write("<h3>계산을 취소했습니다.</h3>");
+                    document.write("<p>새로고침(F5)을 눌러 다시 시도하세요.</p>");
+                } else {
+                    let year = parseInt(yearStr);
+                    let month = parseInt(monthStr);
+                    let day = parseInt(dayStr);
+                    if (isNaN(year) || isNaN(month) || isNaN(day) || month < 1 || month > 12 || day < 1 || day > 31) {
+
+                        document.write("<h3 style='color: #ffb4b4;'>올바른 날짜 형식이 아닙니다.</h3>");
+                        document.write("<p>입력값: " + yearStr + "년 " + monthStr + "월 " + dayStr + "일</p>");
+                        document.write("<p><i>새로고침(F5)을 눌러 다시 입력해주세요.</i></p>");
+
+                    } else {
+                        let targetDate = new Date(year, month - 1, day);
+                        let diffMs = targetDate.getTime() - now.getTime();
+                        let diffDay = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+                        document.write("<h3>목표일: " + year + "년 " + month + "월 " + day + "일</h3>");
+
+                        if (diffDay === 0) {
+                            document.write("<h1>D-Day</h1>");
+                        } else if (diffDay > 0) {
+                            document.write("<h1>D-" + diffDay + "</h1>");
+                        } else {
+                            document.write("<h1>D+" + Math.abs(diffDay) + "</h1>");
+                        }
+
+                        document.write("<hr>");
+                        document.write("<p>오늘 날짜: " + now.toLocaleDateString() + "</p>");
+                        document.write("<p style='font-size:0.85rem; color:rgba(255,255,255,0.35);'><i>새로고침(F5)을 누르면 다시 계산합니다.</i></p>");
+                    }
+                }
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; <span id="year"></span>박상은</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
